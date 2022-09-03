@@ -9,15 +9,19 @@ const loadCategory = ()=>{
 // display category data 
 
 const displayCategory =(categories)=>{
+   
 const showCategory= document.getElementById('for-category')
+
 categories.forEach(category=>{
     const categoryAnchor=document.createElement('ol')
     categoryAnchor.innerHTML=
     `
     <a onclick="loadCategoryDetail('${category._id}')">${category.category_name ? category.category_name : "no data"}</a>
     `
+    
     showCategory.appendChild(categoryAnchor)
 })
+
 }
 loadCategory()
 

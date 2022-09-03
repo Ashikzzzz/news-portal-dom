@@ -4,9 +4,13 @@ const loadCategoryDetail =()=>{
     fetch('https://openapi.programming-hero.com/api/news/category/01')
     .then(res => res.json())
     .then(data => displayCountryDetail(data.data))
+    // spinner start 
+    toggleSpinner(true);
 }
 
 const displayCountryDetail=(details)=>{
+    
+    // detail div 
     const showDetail= document.getElementById('detail')
   details.forEach(detail=>{
     console.log(detail)
@@ -30,6 +34,7 @@ const displayCountryDetail=(details)=>{
      </div>
      <p>Views: ${detail.total_view ? detail.total_view : "no data found"} </p>
      <h6>Rating: ${detail.rating.number}</h6>
+     <button  class="btn btn-info">Show detail</button>
      </div>
     </div>
   </div>
@@ -37,7 +42,8 @@ const displayCountryDetail=(details)=>{
     `
     showDetail.appendChild(categoryDetail)
   })
-  
+//   spinner end 
+ toggleSpinner(false)
 }
 // loadCategoryDetail()
 
