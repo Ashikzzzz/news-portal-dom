@@ -23,7 +23,7 @@
             <a class="nav-link active" aria-current="page" href="#">News</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Blog</a>
+            <a class="nav-link active" target="_blank" aria-current="page" href="http://127.0.0.1:5500/index2.html">Blog</a>
           </li>
           
         </ul>
@@ -33,24 +33,30 @@
   </nav>
    <!-- navigation end -->
    <main>
+  
     <section class="container-fluid">
         <!-- border section  -->
        <div class="for-border">
 
        </div>
        <!-- category start  -->
-       <div >
-        <ul class="d-flex justify-content-evenly" id="for-category">
-
-        </ul>
-
-       </div>
-       <!-- category end -->
-      
-    </section>
-    <div>
+      <div>
+        <div>
+            <ul class="d-flex justify-content-evenly" id="for-category">
+    
+            </ul>
+    
+           </div>
+      </div>
+       <div>
         <h1 id="no-found-text" class="text-danger d-none text-center">No data found</h1>
     </div>
+    
+    
+    <!-- category end -->
+   
+</section>
+
 
 <section>
     <!-- Button trigger modal -->
@@ -94,8 +100,11 @@
      
     </section>
    </main>
-
-
+  <!-- show data length -->
+  <div class="input-group mx-auto w-50 " >
+    
+    <textarea id="data-length"  class="form-control" aria-label="With textarea"></textarea>
+  </div> 
     <!-- bootstrap  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="app.js"></script>

@@ -1,11 +1,19 @@
 // cateroy detail load 
 
 const loadCategoryDetail =(category_id)=>{
+   try{
     fetch(`https://openapi.programming-hero.com/api/news/category/${category_id}`)
     .then(res => res.json())
     .then(data => displayCountryDetail(data.data))
+    
     // spinner start 
     toggleSpinner(true);
+   }
+   finally{
+    
+   }
+   
+  
 }
 
 const displayCountryDetail=(details)=>{
@@ -13,17 +21,22 @@ const displayCountryDetail=(details)=>{
     // detail div 
     const showDetail= document.getElementById('detail')
     const noFoundText=document.getElementById('no-found-text')
+     const dataLength=document.getElementById('data-length')
+     dataLength.textContent=''; 
     details=details.slice(0, 8)
+    console.log(details.length)
+    dataLength.innerText= details.length
     if(details.length===0){
         noFoundText.classList.remove('d-none')
     }
     else{
         noFoundText.classList.add('d-none')
     }
-    // console.log(details)
+    console.log(details)
   details.forEach(detail=>{
     const categoryDetail=document.createElement('div')
     categoryDetail.textContent='';
+    
     categoryDetail.innerHTML=`
     <div class="card mb-3">
   <div class="row g-5">
