@@ -1,7 +1,7 @@
 // cateroy detail load 
 
-const loadCategoryDetail =()=>{
-    fetch('https://openapi.programming-hero.com/api/news/category/01')
+const loadCategoryDetail =(category_id)=>{
+    fetch(`https://openapi.programming-hero.com/api/news/category/${category_id}`)
     .then(res => res.json())
     .then(data => displayCountryDetail(data.data))
     // spinner start 
@@ -34,7 +34,7 @@ const displayCountryDetail=(details)=>{
      </div>
      <p>Views: ${detail.total_view ? detail.total_view : "no data found"} </p>
      <h6>Rating: ${detail.rating.number}</h6>
-     <button  class="btn btn-info">Show detail</button>
+     <button onclick="loadNews('${detail._id}')" class="btn btn-info"  data-bs-toggle="modal" data-bs-target="#newsDetailModal">Show detail</button>
      </div>
     </div>
   </div>
