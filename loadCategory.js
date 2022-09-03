@@ -12,9 +12,18 @@ const displayCountryDetail=(details)=>{
     
     // detail div 
     const showDetail= document.getElementById('detail')
+    const noFoundText=document.getElementById('no-found-text')
+    details=details.slice(0, 8)
+    if(details.length===0){
+        noFoundText.classList.remove('d-none')
+    }
+    else{
+        noFoundText.classList.add('d-none')
+    }
+    // console.log(details)
   details.forEach(detail=>{
-    console.log(detail)
     const categoryDetail=document.createElement('div')
+    categoryDetail.textContent='';
     categoryDetail.innerHTML=`
     <div class="card mb-3">
   <div class="row g-5">
@@ -24,7 +33,7 @@ const displayCountryDetail=(details)=>{
     <div class="col-md-8">
       <div class="card-body">
         <h3 class="card-title">${detail.title ? detail.title : "no data found" }</h3>
-        <p class="card-text">${detail.details ? detail.details : "no data found"}</p>
+        <p class="card-text">${detail.details ? detail.details.slice(0, 380) : "no data found"}</p>
       </div>
 
      <div class="d-flex justify-content-between">
@@ -40,7 +49,7 @@ const displayCountryDetail=(details)=>{
   </div>
 </div>
     `
-    showDetail.appendChild(categoryDetail)
+    showDetail.appendChild(categoryDetail);
   })
 //   spinner end 
  toggleSpinner(false)

@@ -13,7 +13,7 @@ const displayCategory =(categories)=>{
 const showCategory= document.getElementById('for-category')
 
 categories.forEach(category=>{
-    console.log(category)
+    // console.log(category)
     const categoryAnchor=document.createElement('ol')
     categoryAnchor.innerHTML=
     `
