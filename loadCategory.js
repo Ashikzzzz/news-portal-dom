@@ -29,7 +29,7 @@ const displayCountryDetail=(details)=>{
     dataLength.innerText=details.length;
     // console.log(dataValue)
     // 
-    console.log(details.length)
+    // console.log(details.length)
     // dataValue.innerText= ;
     if(details.length===0){
         noFoundText.classList.remove('d-none')
@@ -37,9 +37,15 @@ const displayCountryDetail=(details)=>{
     else{
         noFoundText.classList.add('d-none')
     }
-    console.log(details)
-  details.forEach(detail=>{
+     const sortingDetail= details.sort((a, b)=>{
+  return b.total_view- a.total_view;
     
+    })
+    // console.log(sortingDetail)
+    // console.log(details)
+    sortingDetail.forEach(detail=>{
+    // console.log(detail)
+   
     const categoryDetail=document.createElement('div')
     categoryDetail.textContent='';
     
@@ -73,5 +79,5 @@ const displayCountryDetail=(details)=>{
 //   spinner end 
  toggleSpinner(false)
 }
-loadCategoryDetail('08')
+// loadCategoryDetail('08')
 
