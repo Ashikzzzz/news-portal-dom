@@ -27,10 +27,7 @@ const displayCountryDetail=(details)=>{
     details=details.slice(0, 8)
     
     dataLength.innerText=details.length;
-    // console.log(dataValue)
-    // 
-    // console.log(details.length)
-    // dataValue.innerText= ;
+   
     if(details.length===0){
         noFoundText.classList.remove('d-none')
     }
@@ -41,10 +38,8 @@ const displayCountryDetail=(details)=>{
   return b.total_view- a.total_view;
     
     })
-    // console.log(sortingDetail)
-    // console.log(details)
+ 
     sortingDetail.forEach(detail=>{
-    // console.log(detail)
    
     const categoryDetail=document.createElement('div')
     categoryDetail.textContent='';

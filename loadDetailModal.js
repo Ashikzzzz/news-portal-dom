@@ -10,7 +10,7 @@ const loadNews= (_id)=>{
 }
 
 const displayNews= (news)=>{
-    // console.log(news.data)
+   
 const newsDetail=document.getElementById('newsDetailModal')
 newsDetail.innerHTML=`
 <div class="modal-content">
